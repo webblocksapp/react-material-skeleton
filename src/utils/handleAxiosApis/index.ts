@@ -11,7 +11,7 @@ export async function handleAxiosApis<T extends any[]>(
   axiosPromise8?: Promise<AxiosResponse<T[7]>>,
   axiosPromise9?: Promise<AxiosResponse<T[8]>>,
   axiosPromise10?: Promise<AxiosResponse<T[9]>>
-): Promise<[...T[]]> {
+): Promise<[...T]> {
   const axiosPromises = [
     axiosPromise1,
     axiosPromise2,
