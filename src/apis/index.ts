@@ -1,2 +1,2 @@
 // @index('./**/index.ts', f => `export * from '${f.path.replace(/\/index$/, '')}'`)
-export * from './useCustomerApi';
+export * from './usePokemonApi';
