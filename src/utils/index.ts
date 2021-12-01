@@ -2,3 +2,5 @@
 export * from './getAxiosErrorMessage';
 export * from './handleAxiosApi';
 export * from './handleAxiosApis';
+export * from './mapJSXRecursive';
+export * from './mapRecursive';
