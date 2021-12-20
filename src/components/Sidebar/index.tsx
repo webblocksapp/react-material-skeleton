@@ -1,13 +1,16 @@
 import React from 'react';
-import { Box, Drawer, DrawerProps, SidebarMenu } from '@components';
+import { Box, Drawer, DrawerProps, TreeMenu } from '@components';
+import { TreeMenu as TreeMenuType } from '@app-types';
 
-export interface SidebarProps extends DrawerProps {}
+export interface SidebarProps extends DrawerProps {
+  menu: TreeMenuType[];
+}
 
-export const Sidebar: React.FC<SidebarProps> = (props) => {
+export const Sidebar: React.FC<SidebarProps> = ({ menu, ...props }) => {
   return (
     <Drawer {...props}>
       <Box width={250}>
-        <SidebarMenu />
+        <TreeMenu menu={menu} />
       </Box>
     </Drawer>
   );

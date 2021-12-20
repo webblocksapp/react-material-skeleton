@@ -13,7 +13,7 @@ export * from './ListItemButton';
 export * from './ListItemIcon';
 export * from './ListItemText';
 export * from './Sidebar';
-export * from './SidebarMenu';
+export * from './TreeMenu';
 export * from './Toolbar';
 export * from './Typography';
 export * from './WhiteLink';

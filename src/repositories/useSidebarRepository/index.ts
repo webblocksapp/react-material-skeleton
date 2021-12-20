@@ -13,7 +13,7 @@ export const useSidebarRepository = () => {
     dispatch({ type: 'SIDEBAR:CLOSE', flag: false });
   };
 
-  const getIsSidebarOpen = (state: RootState) => state.sidebarState.open;
+  const selectOpen = (state: RootState) => state.sidebarState.open;
 
-  return { open, close, getIsSidebarOpen };
+  return { open, close, selectOpen };
 };

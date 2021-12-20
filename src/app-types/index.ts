@@ -10,5 +10,5 @@ export * from './PokemonAction';
 export * from './PokemonState';
 export * from './RootState';
 export * from './SidebarAction';
-export * from './SidebarMenu';
 export * from './SidebarState';
+export * from './TreeMenu';

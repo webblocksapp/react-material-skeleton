@@ -5,6 +5,7 @@
       "@apis": ["apis"],
       "@app-types": ["app-types"],
       "@components": ["components"],
+      "@constants/*": ["constants/*"],
       "@layouts": ["layouts"],
       "@modules/*": ["modules/*"],
       "@states": ["states"],
