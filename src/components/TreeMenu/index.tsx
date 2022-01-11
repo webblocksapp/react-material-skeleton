@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { List, ListProps, ListItemButton, ListItemIcon, ListItemText, Collapse } from '@components';
+import { mapRecursive } from '@utils';
 import { TreeMenu as TreeMenuType } from 'app-types';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { mapRecursive } from '@utils';
+import { useNavigate } from 'react-router-dom';
 
 export interface TreeMenuProps extends ListProps {
   menu: TreeMenuType[];
@@ -13,8 +14,9 @@ export interface TreeMenuProps extends ListProps {
 export const TreeMenu: React.FC<TreeMenuProps> = ({ level = 1, menu: menuProp, ...props }) => {
   const [menu, setMenu] = useState<TreeMenuType[]>(menuProp || []);
   const [paddingLeft, setPaddingLeft] = useState<number>();
+  const navigate = useNavigate();
 
-  const open = (id: number) => () => {
+  const open = (id: number, path?: string) => () => {
     setMenu((prevMenu) =>
       mapRecursive(prevMenu, (item) => {
         if (item.id === id) {
@@ -23,6 +25,8 @@ export const TreeMenu: React.FC<TreeMenuProps> = ({ level = 1, menu: menuProp, .
         return item;
       })
     );
+
+    path && navigate(path);
   };
 
   useEffect(() => {
@@ -35,7 +39,7 @@ export const TreeMenu: React.FC<TreeMenuProps> = ({ level = 1, menu: menuProp, .
     <List {...props}>
       {menu.map((item, index) => (
         <React.Fragment key={`${index}-${item.id}`}>
-          <ListItemButton sx={{ paddingLeft }} onClick={open(item.id)}>
+          <ListItemButton sx={{ paddingLeft }} onClick={open(item.id, item?.path)}>
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText primary={item.text} />
             {item.children && (item.open ? <ExpandLessIcon /> : <ExpandMoreIcon />)}

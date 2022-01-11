@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header, Sidebar } from '@components';
+import { Box, Header, Sidebar } from '@components';
 import { Outlet } from 'react-router-dom';
 import { sidebarMenu } from '@constants/sidebarMenu';
 import { useSelector } from 'react-redux';
@@ -10,12 +10,14 @@ export const MainLayout: React.FC = () => {
   const open = useSelector(sidebarRepository.selectOpen);
 
   return (
-    <>
+    <Box height="100%" display="grid" gridTemplateRows="auto 1fr">
       <Header />
-      <Container>
-        <Sidebar open={open} menu={sidebarMenu} onClose={sidebarRepository.close} />
-        <Outlet />
-      </Container>
-    </>
+      <Box height="100%" display="grid" gridTemplateColumns="220px 1fr">
+        <Sidebar open={open} menu={sidebarMenu} />
+        <Box p={2}>
+          <Outlet />
+        </Box>
+      </Box>
+    </Box>
   );
 };

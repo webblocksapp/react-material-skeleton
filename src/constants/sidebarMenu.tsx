@@ -8,23 +8,5 @@ export const sidebarMenu: TreeMenu[] = [
     text: 'Pokemons',
     open: false,
     icon: <PetsIcon />,
-    children: [
-      {
-        id: 2,
-        path: 'pokemons',
-        text: 'Pokemons',
-        open: false,
-        icon: <PetsIcon />,
-        children: [
-          {
-            id: 3,
-            path: 'pokemons',
-            text: 'Pokemons',
-            open: false,
-            icon: <PetsIcon />,
-          },
-        ],
-      },
-    ],
   },
 ];
