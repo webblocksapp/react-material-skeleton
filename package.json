@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.1",
-    "@mui/icons-material": "^5.2.0",
-    "@mui/material": "^5.2.0",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.2.0",
+    "@mui/material": "^5.2.0",
+    "@mui/styles": "^5.2.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -16,6 +17,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "axios": "^0.24.0",
+    "mui-datatables": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
@@ -52,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@types/mui-datatables": "^3.7.7",
     "@types/react-router-dom": "^5.1.8",
     "craco-alias": "^3.0.1",
     "json-server": "^0.17.0",

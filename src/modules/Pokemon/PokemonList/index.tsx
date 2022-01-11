@@ -1,29 +1,26 @@
 import React, { useEffect } from 'react';
-import { Edit as EditIcon } from '@mui/icons-material';
-import { IconButton, List, ListItem, Link, Typography } from '@components';
+import { Datatable } from '@components';
 import { usePokemonRepository } from '@repositories';
 import { useSelector } from 'react-redux';
+import { DatatableColumn } from '@app-types';
 
 export const PokemonList: React.FC = () => {
   const { selectPokemons, list } = usePokemonRepository();
   const pokemons = useSelector(selectPokemons);
+  const columns: DatatableColumn[] = [
+    {
+      name: 'name',
+      label: 'Name',
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+  ];
 
   useEffect(() => {
     list();
   }, []);
 
-  return (
-    <List>
-      {pokemons.map((pokemon) => (
-        <ListItem key={pokemon.id}>
-          <Typography variant="body1">{pokemon.name}</Typography>
-          <Link to={`${pokemon.id}/update`}>
-            <IconButton>
-              <EditIcon />
-            </IconButton>
-          </Link>
-        </ListItem>
-      ))}
-    </List>
-  );
+  return <Datatable title="Pokemons" data={pokemons} columns={columns} />;
 };

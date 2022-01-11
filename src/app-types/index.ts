@@ -1,4 +1,5 @@
 // @index('./*', f => `export * from '${f.path}'`)
+export * from './DatatableColumn';
 export * from './ErrorAction';
 export * from './ErrorState';
 export * from './FlagAction';
